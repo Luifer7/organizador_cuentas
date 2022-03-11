@@ -1,5 +1,10 @@
   
- 
+ window.addEventListener("load", actualizarPagina);
+
+ function actualizarPagina () {
+     
+    
+
 const columnaUno = document.createElement('div');
       columnaUno.classList.add('columnas');
       columnaUno.innerHTML = `
@@ -50,44 +55,49 @@ let cuerpo = document.querySelector('body');
 
     function imprimir(cuerpo) {
 
-        //Obtenemos elemento Tbody
-        const tbody = document.getElementById('tbody');
-        //Obtenemos los input
         let inputUno = document.querySelectorAll('div input');
-        //Creamos dinamicamente los tr y td
-        const tds = document.createElement('tr');
-              tds.innerHTML =  `
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            `
-        // Le asignamos el valor de los inputs a los elementos td
-     
-        tds.lastElementChild.innerHTML = inputUno[1].value;
-        tds.firstElementChild.innerHTML = inputUno[2].value;
-        tds.lastElementChild.innerHTML = inputUno[3].value;
-
-         
-         tdUno = tds.children[0];
-         tdUno.innerHTML = inputUno[0].value;
-
-         tdDos = tds.children[1];
-         tdDos.innerHTML = inputUno[1].value;
-
-         tdTres = tds.children[2];
-         tdTres.innerHTML = inputUno[2].value;
-
-         tdCuatro = tds.children[3];
-         tdCuatro.innerHTML = inputUno[3].value;
-
-
-         console.log(tdUno)
-        
-        //tbody
-        tbody.insertAdjacentElement('beforebegin', tds)
-
-   
+        let condicion = 1;
+        if (condicion = 0 ) {
+           alert("hola")
+        } else {
+            
+              //Obtenemos elemento Tbody
+              const tbody = document.getElementById('tbody');
+              //Obtenemos los input
+                
+              //Creamos dinamicamente los tr y td
+                const tds = document.createElement('tr');
+                tds.innerHTML =  `
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              `
+          tbody.insertAdjacentElement('beforebegin', tds);
+          
+          // Le asignamos el valor de los inputs a los elementos td
+          tdUno = tds.children[0];
+          tdUno.innerHTML = inputUno[0].value;
+  
+           tdDos = tds.children[1];
+           tdDos.innerHTML = inputUno[1].value;
+  
+           tdTres = tds.children[2];
+           tdTres.innerHTML = inputUno[2].value;
+  
+           tdCuatro = tds.children[3];
+           tdCuatro.innerHTML = inputUno[3].value;
+  
+                 //Igualar inputs a Cero
+          for (let i = 0; i < inputUno.length; i++) {
+              const inp = inputUno[i]; 
+              inp.value = "";
+          }
+  
+        }
+       
+    
     }
     
+}
 
