@@ -1,0 +1,175 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: rgb(24, 21, 21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja {
+    
+    width: 90%;
+    height: 90vh;
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+
+    margin-top: 20px;
+    background: rgb(216, 215, 212);
+    border-radius: 10px;
+
+}
+
+
+.columnas:nth-child(1){
+    
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: rgb(22, 21, 21);
+}
+
+.columnas:nth-child(2) {
+    display:block; 
+    
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    color: rgb(31, 32, 32);
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h1:nth-child(2) {
+    margin-top: 20px;
+}
+
+span {
+    height: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    outline-color: rgb(70, 138, 240);    
+}
+
+input::placeholder {
+    text-align: center;
+    font-size: 1em;
+}
+
+
+
+table {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+   
+}
+
+th {
+    color: black;
+    background: rgb(238, 238, 238);
+    border-radius: 5px;
+    height: 40px;
+
+    font-size: 1em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+td {
+    color: white;
+    background: rgb(70, 138, 240);
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 30px;
+
+    font-size: .9em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+
+    margin-top: 20px;
+
+    color: white;
+
+    outline: none;
+    border: none;
+    background: rgb(19, 138, 19);
+}
+
+.btn:hover{
+    box-shadow: 3px 2px 4px 3px rgb(10, 85, 10);
+}
+
+
+@media (max-width: 900px) {
+    .caja {
+
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+
+    .columnas:nth-child(1){
+    
+            gap: 5px;
+    }
+
+    
+    hr {
+        display: block;
+    }
+
+
+    
+    span {
+        height: 20px;
+        font-size: 1em;
+    }
+    
+    th {
+        font-size: .9em;
+    }
+    
+    td {
+        font-size: .7em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+    h1:nth-child(1) {
+        margin-top: 20px;
+    }
+    
+}
