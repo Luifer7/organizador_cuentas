@@ -38,15 +38,7 @@
             datosInput = [];
         } else {
             datosInput.forEach(element => {
-                listaDeCuentas.innerHTML += `
-                <div class="list">
-                    <li>${element.tipo}</li>
-                    <li>${element.cuenta}</li>
-                    <li>${element.pass}</li>
-                    <li>Borrar</li>
-                </div>
-                `
-            });
+            listaDeCuentas.innerHTML += `<div class="list"><li>${element.tipo}</li><li>${element.cuenta}</li><li>${element.pass}</li><li>Borrar</li></div>`});
         }
     }
 
@@ -91,7 +83,7 @@
           document.addEventListener('DOMContentLoaded', imprimirLS)
 
           listaDeCuentas.addEventListener('click', (e) => {
-
+              console.log(e)
                 let textoUno = e.path[1].children[0].innerHTML;
                 let textoDos = e.path[1].children[1].innerHTML;
                 let textoTres = e.path[1].children[2].innerHTML;
