@@ -15,7 +15,7 @@ body {
 
 .caja {
     
-    width: 90%;
+    width: 95%;
     height: 90vh;
     
     display: grid;
@@ -57,6 +57,7 @@ body {
     transition: .9s;
 }
 
+
 li {
    
     width: 25%;
@@ -97,10 +98,6 @@ svg {
     color: white;
     margin-left: 5px;
 }
-
-
-
-
 
 
 .columnas div {
@@ -212,7 +209,7 @@ input::placeholder {
 
     li {
         width: 20%;
-        font-size: .6em;
+        font-size: .5em;
     }
 
 }
