@@ -61,18 +61,17 @@ li {
    
     width: 25%;
     height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     list-style: none;
     color: white;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1em;
+    font-size: .9em;
     font-weight: bold;
     transition: .9s;
 }
 
-li:nth-child(5) {
+
+li:nth-child(4) {
     cursor: pointer;
     color: rgb(172, 18, 18);
 }
@@ -91,6 +90,7 @@ h1 {
     color: rgb(31, 32, 32);
     font-size: 2em;
     text-align: center;
+    text-transform: capitalize;
 }
 
 svg {
@@ -194,12 +194,25 @@ input::placeholder {
     li {
    
         width: 20%;
-        
-        font-size: .7em;
+        font-size: .8em;
     }
 
-    svg {
-        margin-left: 0;
-    }
     
+    
+}
+
+
+@media (max-width: 500px) {
+    li {
+        width: 20%;
+        font-size: .7em;
+    }
+}
+@media (max-width: 360px) {
+
+    li {
+        width: 20%;
+        font-size: .6em;
+    }
+
 }
