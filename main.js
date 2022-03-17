@@ -40,7 +40,7 @@
             datosInput = [];
         } else {
             datosInput.forEach(element => {
-                console.log(listaDeCuentas)
+               
             listaDeCuentas.innerHTML += `
             <div id="size" class="card-body table-responsive">
             <table class="table table-hover">
@@ -48,20 +48,22 @@
             <tr>
             <td scope="col">${element.nombre}</td>
             <td scope="col">${element.fecha}</td>
-            <td class="bg-danger" scope="col" style="color:white; text-align: center; width:10%; border-radius:10px;">Borrar</td>
+            <td class="bg-danger" scope="col" style="color:white; cursor:pointer; text-align: center; width:10%; border-radius:10px;">Borrar</td>
             </tr>
             <tr>
-            <td scope="col">${element.tipo}</td>
+            <td class="bgt" scope="col">${element.tipo}</td>
             <td scope="col">${element.pass}</td>
             <td scope="col">${element.email}</td>
             </tr>
             </tbody>
             </table>
             </div>`});
-
         }
+        
+            
     }
 
+  
     const borrarLS = (nombre,fecha,tipo,pass,email) => {
 
         let indexArreglo;
@@ -70,7 +72,6 @@
 
             if (element.nombre === nombre && element.fecha === fecha && element.tipo === tipo && element.pass === pass && element.email === email) {
                 indexArreglo = index;
-                console.log(index)
             } 
         });
         datosInput.splice(indexArreglo, 1)
@@ -105,7 +106,7 @@
           document.addEventListener('DOMContentLoaded', imprimirLS)
 
           listaDeCuentas.addEventListener('click', (e) => {
-                console.log(e)
+                
                 let textoUno = e.path[1].children[0].innerHTML;
                 let textoDos = e.path[1].children[1].innerHTML;
                 let textoTres = e.path[2].children[1].children[0].innerHTML;
@@ -113,9 +114,10 @@
                 let textoCinco = e.path[2].children[1].children[2].innerHTML;
                 
 
-           if (e.target.innerHTML === "Borrar") {
-                borrarLS(textoUno, textoDos, textoTres, textoCuatro, textoCinco);
-           }
+                if (e.target.innerHTML === "Borrar") {
+                        borrarLS(textoUno, textoDos, textoTres, textoCuatro, textoCinco);
+                }
+
 
           });
 
