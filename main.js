@@ -11,11 +11,13 @@
     
     let datosInput = [];
 
-    const crearItem = (tipo,cuenta,pass) => {
+    const crearItem = (nombre,fecha,tipo,pass,email) => {
         let item = {
+            nombre: nombre,
+            fecha: fecha,
             tipo: tipo,
-            cuenta: cuenta,
-            pass: pass
+            pass: pass,
+            email: email
         }
 
         datosInput.push(item);
@@ -38,17 +40,35 @@
             datosInput = [];
         } else {
             datosInput.forEach(element => {
-            listaDeCuentas.innerHTML += `<div class="list"><li>${element.tipo}</li><li>${element.cuenta}</li><li>${element.pass}</li><li>Borrar</li></div>`});
+                console.log(listaDeCuentas)
+            listaDeCuentas.innerHTML += `
+            <div id="size" class="card-body table-responsive">
+            <table class="table table-hover">
+            <tbody>
+            <tr>
+            <td scope="col">${element.nombre}</td>
+            <td scope="col">${element.fecha}</td>
+            <td class="bg-danger" scope="col" style="color:white; text-align: center; width:10%; border-radius:10px;">Borrar</td>
+            </tr>
+            <tr>
+            <td scope="col">${element.tipo}</td>
+            <td scope="col">${element.pass}</td>
+            <td scope="col">${element.email}</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>`});
+
         }
     }
 
-    const borrarLS = (tipo,cuenta,pass) => {
+    const borrarLS = (nombre,fecha,tipo,pass,email) => {
 
         let indexArreglo;
 
         datosInput.forEach((element, index) => {
 
-            if (element.tipo === tipo && element.cuenta === cuenta && element.pass === pass) {
+            if (element.nombre === nombre && element.fecha === fecha && element.tipo === tipo && element.pass === pass && element.email === email) {
                 indexArreglo = index;
                 console.log(index)
             } 
@@ -64,14 +84,16 @@
         const boton = document.getElementById('btn');
           boton.addEventListener('click', () => {
 
-                let inputs = document.querySelectorAll('input');
+                let inputs = document.querySelectorAll('input')
                 
-                let tipo = inputs[0].value;
-                let cuenta = inputs[1].value;
-                let pass = inputs[2].value;
+                let nombre = inputs[0].value;
+                let fecha = inputs[1].value;
+                let tipo = inputs[2].value;
+                let pass = inputs[3].value;
+                let email = inputs[4].value;
                
 
-                crearItem(tipo, cuenta, pass);
+                crearItem(nombre, fecha, tipo, pass, email);
                 guardarLS();
                  
                 inputs.forEach(element => {
@@ -83,16 +105,16 @@
           document.addEventListener('DOMContentLoaded', imprimirLS)
 
           listaDeCuentas.addEventListener('click', (e) => {
-              console.log(e)
+                console.log(e)
                 let textoUno = e.path[1].children[0].innerHTML;
                 let textoDos = e.path[1].children[1].innerHTML;
-                let textoTres = e.path[1].children[2].innerHTML;
+                let textoTres = e.path[2].children[1].children[0].innerHTML;
+                let textoCuatro = e.path[2].children[1].children[1].innerHTML;
+                let textoCinco = e.path[2].children[1].children[2].innerHTML;
                 
 
            if (e.target.innerHTML === "Borrar") {
-                //console.log("estas presionando borrar")
-                //console.log(e.path[1].children[2].innerHTML)
-                borrarLS(textoUno, textoDos, textoTres);
+                borrarLS(textoUno, textoDos, textoTres, textoCuatro, textoCinco);
            }
 
           });
