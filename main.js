@@ -89,11 +89,28 @@
 
                 let inputs = document.querySelectorAll('input');
 
-                let nombre = inputs[0].value;
-                let fecha = inputs[1].value;
-                let tipo = inputs[2].value;
-                let pass = inputs[3].value;
-                let email = inputs[4].value;
+                   let date = new Date()
+                   let año =  date.getFullYear();
+                   let mes = date.getMonth();
+                   let dia = date.getDate();
+                   
+                   let fechaActual = []; 
+                       fechaActual.push(año)
+                       fechaActual.push(mes)
+                       fechaActual.push(dia)
+                       fechaActual.toString(); 
+
+                        console.log(fechaActual)
+                        //fechaActual.replace(',','-');
+                      let superFecha = fechaActual.toLocaleString();
+                      let final = superFecha.replace(/,/g, "-");        
+                      console.log(final)
+
+                        let nombre = inputs[0].value;
+                        let fecha = final;
+                        let tipo = inputs[2].value;
+                        let pass = inputs[3].value;
+                        let email = inputs[4].value;
 
                     if (nombre ==="" && fecha ==="" && tipo ==="" && pass ==="" && email ==="") {
                         console.log("campos vacios")

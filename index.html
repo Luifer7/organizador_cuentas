@@ -20,6 +20,15 @@
 </head>
 <body>
     
+    
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#">Strange</a>
+            <a class="nav-item nav-link" href="#">Home</a>
+        </div>        
+    </nav>
+
+
         
    <div class="container">
 
@@ -45,7 +54,7 @@
                             </div>
                             
                             <div class="mb-3">
-                                <input class="form-control" value="" type="date">
+                                <input class="form-control" readonly value="" type="date">
                             </div>
                             
                             <div class="mb-3">
@@ -69,8 +78,12 @@
                     </div>
 
             </div>    
-
-            <div id="listaActividades" class="col-md-8 columna-dos">  
+            
+            <div id="listaActividades" class="col-md-8 columna-dos">
+               
+            </div>
+            <div class="card-header bordered">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
             </div>
 
         </div>
