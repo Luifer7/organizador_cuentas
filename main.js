@@ -18,6 +18,8 @@
             tipo: tipo,
             pass: pass,
             email: email
+
+        
         }
 
         datosInput.push(item);
@@ -85,21 +87,30 @@
         const boton = document.getElementById('btn');
           boton.addEventListener('click', () => {
 
-                let inputs = document.querySelectorAll('input')
-                
+                let inputs = document.querySelectorAll('input');
+
                 let nombre = inputs[0].value;
                 let fecha = inputs[1].value;
                 let tipo = inputs[2].value;
                 let pass = inputs[3].value;
                 let email = inputs[4].value;
+
+                    if (nombre ==="" && fecha ==="" && tipo ==="" && pass ==="" && email ==="") {
+                        console.log("campos vacios")
+                        inputs.forEach(element => {
+                            inputs[0].focus();
+                        });
+                    } else {
+                        
+                    crearItem(nombre, fecha, tipo, pass, email);
+                    guardarLS();
+                    
+                    inputs.forEach(element => {
+                        element.value = "";
+                    });
+                 }
                
 
-                crearItem(nombre, fecha, tipo, pass, email);
-                guardarLS();
-                 
-                inputs.forEach(element => {
-                    element.value = "";
-                });
                     
           } );
 
